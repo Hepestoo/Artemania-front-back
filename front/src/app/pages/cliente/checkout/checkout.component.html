@@ -1,0 +1,39 @@
+<h2>Resumen del Pedido</h2>
+
+<div *ngIf="orden">
+  <p><strong>ID Orden:</strong> {{ orden.id }}</p>
+  <p><strong>Total:</strong> {{ orden.total | currency }}</p>
+
+  <h3>Finalizar Compra</h3>
+  <form (ngSubmit)="finalizarCompra()" #form="ngForm">
+    <label>
+      Nombre completo:
+      <input type="text" [(ngModel)]="datosCliente.nombre" name="nombre" required />
+    </label>
+    <br />
+    <label>
+      Dirección:
+      <input type="text" [(ngModel)]="datosCliente.direccion" name="direccion" required />
+    </label>
+    <br />
+    <label>
+      Teléfono:
+      <input type="text" [(ngModel)]="datosCliente.telefono" name="telefono" required />
+    </label>
+    <br />
+    <label>
+      Método de pago:
+      <select [(ngModel)]="metodoPagoSeleccionado" name="metodoPagoSeleccionado" required>
+        <option *ngFor="let metodo of metodosPago" [value]="metodo.id">
+          {{ metodo.nombre }}
+        </option>
+      </select>
+    </label>
+    <br /><br />
+    <button type="submit" [disabled]="form.invalid">Finalizar compra</button>
+  </form>
+</div>
+
+<div *ngIf="!orden">
+  <p>No hay ninguna orden generada aún.</p>
+</div>

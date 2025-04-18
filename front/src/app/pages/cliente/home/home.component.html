@@ -1,0 +1,121 @@
+
+<!-- Hero -->
+<section class="hero">
+  <div class="texto">
+    <h1>Bienvenidos a <br><span>ARTEMANIA!</span></h1>
+    <h2>Manualidades, cursos, talleres y más...</h2>
+    <button [routerLink]="'/catalogo'">Ver productos →</button>
+  </div>
+  <img src="https://images.pexels.com/photos/5512621/pexels-photo-5512621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Hero imagen">
+</section>
+
+<!-- Oferta -->
+<section class="oferta">
+  <img src="" alt="Oferta">
+  <p><strong>Abona 10$</strong> y paga el resto cuando acabes, en todos nuestros cursos y talleres</p>
+</section>
+
+<!-- Carrusel cursos -->
+<section class="cursos">
+    <div class="header">
+      <h3>Cursos y talleres disponibles</h3>
+      <a routerLink="/catalogo">Ver más</a>
+    </div>
+  
+    <div class="carousel-wrapper" #carousel>
+      <div class="carousel-cursos">
+        <div class="curso" *ngFor="let curso of cursos">
+          <img [src]="'http://localhost:3000/uploads/productos/' + curso.imagen_url" alt="{{ curso.nombre }}">
+          <h4>{{ curso.nombre }}</h4>
+          <h4>{{ curso.descripcion }}</h4>
+          <button>Inscribirse →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+<!-- Categorías -->
+<section class="categorias-home">
+    <button>Cursos</button>
+    <button>Talleres</button>
+    <button>Velas</button>
+    <button>Resina</button>
+    <button>Cartonaje</button>
+    <button>Scrapbooking</button>
+    <button>Herramientas</button>
+    <button>Promociones</button>
+  </section>
+  
+  
+
+<!-- Productos más vendidos -->
+<section class="productos-vendidos">
+  <div class="header">
+    <h3>Productos más vendidos</h3>
+    <a href="/catalogo">Ver mas</a>
+  </div>
+
+  <div class="grid-productos">
+    <div class="producto">
+      <img src="https://images.pexels.com/photos/5554699/pexels-photo-5554699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+      <p>Pigmentos líquidos para velas</p>
+      <span>$2.00</span>
+      <small>Materias primas</small>
+    </div>
+    <div class="producto">
+        <img src="https://images.pexels.com/photos/5554699/pexels-photo-5554699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+        <p>Pigmentos líquidos para velas</p>
+        <span>$2.00</span>
+        <small>Materias primas</small>
+      </div>
+      <div class="producto">
+        <img src="https://images.pexels.com/photos/5554699/pexels-photo-5554699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+        <p>Pigmentos líquidos para velas</p>
+        <span>$2.00</span>
+        <small>Materias primas</small>
+      </div>
+      <div class="producto">
+        <img src="https://images.pexels.com/photos/5554699/pexels-photo-5554699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+        <p>Pigmentos líquidos para velas</p>
+        <span>$2.00</span>
+        <small>Materias primas</small>
+      </div>
+  </div>
+</section>
+
+<!-- Sugerencias -->
+<section class="sugerencias">
+  <h3>Ayúdanos a mejorar</h3>
+  <p>Cuéntanos tu experiencia y en qué podemos mejorar</p>
+  <textarea placeholder="Déjanos tu sugerencia"></textarea>
+  <button>Enviar</button>
+</section>
+
+<!-- Beneficios -->
+<section class="beneficios">
+  <div class="beneficio">
+    <h4>Envíos rápidos y seguros</h4>
+    <p>Encuentra moldes, herramientas y materiales. Todo para tus proyectos creativos.</p>
+  </div>
+  <div class="beneficio">
+    <h4>Productos de buena calidad</h4>
+    <p>Seleccionados y probados para asegurar durabilidad y satisfacción.</p>
+  </div>
+  <div class="beneficio">
+    <h4>Envíos nacionales</h4>
+    <p>Recibe tus pedidos en casa de forma rápida y segura.</p>
+  </div>
+</section>
+
+<a
+  href="https://wa.me/593987526383" 
+  target="_blank"
+  class="whatsapp-float"
+  aria-label="Chatea con nosotros en WhatsApp"
+>
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp">
+</a>
+
+

@@ -1,0 +1,78 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', sans-serif;
+  
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+  
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+  
+      li a {
+        text-decoration: none;
+        color: #222;
+        font-weight: 600;
+  
+        &.activo {
+          border-bottom: 3px solid purple;
+          padding-bottom: 0.2rem;
+        }
+      }
+    }
+  
+    .nav-actions {
+      display: flex;
+      gap: 1rem;
+  
+      .btn-light {
+        background-color: #f3e6f9;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+  
+      .btn-primary {
+        background-color: purple;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    }
+  }
+  .btn-icon {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  .btn-icon .pi {
+    font-size: 1.8rem;
+    color: #000000;
+  }
+  
+  .carrito-contador {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #a341a4;
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 50%;
+  }
+  

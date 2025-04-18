@@ -1,0 +1,100 @@
+/* Banner */
+.banner-nosotros {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .banner-nosotros img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .banner-nosotros h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 6px black;
+  }
+  
+  /* Quienes somos */
+  .quienes-somos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    background-color: #f5f5f5;
+  }
+  
+  .quienes-somos .texto {
+    flex: 1;
+  }
+  
+  .quienes-somos img {
+    max-width: 400px;
+    border-radius: 12px;
+  }
+  
+  /* Misión y visión */
+  .mision-vision {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    background-color: #3a2c2c;
+    color: white;
+  }
+  
+  .mision-vision div {
+    max-width: 40%;
+  }
+  
+  /* Compromiso bloque único */
+  .compromiso {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f4e4fa;
+    flex-wrap: wrap;
+  }
+  
+  .compromiso img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+  }
+  
+  /* Diferenciadores */
+  .diferencias {
+    padding: 2rem;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .diferencias h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .diferencia {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .diferencia img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+  }
+  
+  .diferencia.reverso {
+    flex-direction: row-reverse;
+  }
+  

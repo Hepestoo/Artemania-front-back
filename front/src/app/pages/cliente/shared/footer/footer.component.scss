@@ -1,0 +1,48 @@
+.footer {
+    width: 100%;
+    background-color: #e2bce6; /* morado claro */
+    color: #1a1a1a;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 3rem 2rem; /* 🔺 aumenta el alto general */
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 3rem; /* 🔺 separa más las secciones */
+    margin-bottom: 3rem; /* 🔺 más espacio antes del final */
+  }
+  
+  .footer-section {
+    min-height: 160px; /* 🔺 altura mínima por sección */
+  }
+  
+  .footer-section h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-section h2 span {
+    color: magenta;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #000;
+  }
+  
+  .footer-section p {
+    margin: 0.3rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .footer-bottom {
+    background-color: #1f1233;
+    padding: 1rem 2rem; /* si quieres también más alto aquí */
+    color: white;
+    text-align: center;
+  }
+  

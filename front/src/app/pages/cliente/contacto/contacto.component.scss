@@ -1,0 +1,123 @@
+/* Banner */
+.banner-contactanos {
+    position: relative;
+    text-align: center;
+  }
+  
+  .banner-contactanos img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+  }
+  
+  .banner-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 1px 1px 4px black;
+  }
+  
+  /* Info rápida */
+  .info-rapida {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff2fb;
+  }
+  
+  .servicio-cliente ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .servicio-cliente li::before {
+    content: "• ";
+    color: purple;
+  }
+  
+  /* Formulario */
+  .formulario-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    background-color: #f6f6f6;
+  }
+  
+  form {
+    flex: 1 1 300px;
+    max-width: 400px;
+  }
+  
+  .img-form {
+    max-width: 400px;
+    flex: 1 1 300px;
+    border-radius: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input, textarea {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  button {
+    background-color: purple;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  /* Info local */
+  .info-local {
+    background-color: #f3dcf5;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .box {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  /* Ubicación */
+  .ubicacion {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  /* Redes sociales */
+  .redes {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f3dcf5;
+  }
+  
+  .iconos i {
+    font-size: 2rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    color: #333;
+  }
+  
