@@ -3,9 +3,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background: white;
+    background: #F2F2F2;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Quicksand', sans serif;
   
     .logo {
       font-size: 1.8rem;
@@ -19,7 +19,7 @@
   
       li a {
         text-decoration: none;
-        color: #222;
+        color: #604730;
         font-weight: 600;
   
         &.activo {
@@ -34,7 +34,7 @@
       gap: 1rem;
   
       .btn-light {
-        background-color: #f3e6f9;
+        background-color: #900acf;
         border: none;
         padding: 0.5rem 1rem;
         border-radius: 8px;
@@ -42,7 +42,7 @@
       }
   
       .btn-primary {
-        background-color: purple;
+        background-color: rgb(0, 0, 0);
         color: white;
         border: none;
         padding: 0.5rem 1rem;
@@ -52,27 +52,29 @@
     }
   }
   .btn-icon {
-    background-color: transparent;
+    background: none;
     border: none;
-    position: relative;
-    font-size: 1.4rem;
     cursor: pointer;
-    padding: 0.5rem;
+    font-size: 1.4rem;
+    color: #4a4a4a;
+    margin-left: 1rem;
+    position: relative;
+    transition: color 0.2s ease;
   }
   
-  .btn-icon .pi {
-    font-size: 1.8rem;
-    color: #000000;
+  .btn-icon:hover {
+    color: #771379;
   }
   
   .carrito-contador {
     position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: #a341a4;
+    top: -6px;
+    right: -6px;
+    background: red;
     color: white;
-    font-size: 0.75rem;
-    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+    padding: 2px 6px;
     border-radius: 50%;
   }
+  
   

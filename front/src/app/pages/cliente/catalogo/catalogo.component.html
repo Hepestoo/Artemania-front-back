@@ -1,17 +1,18 @@
 <!-- Banner del catálogo -->
 <section class="banner-catalogo">
-    <img
-      src="https://images.pexels.com/photos/220320/pexels-photo-220320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-      alt="Publicidad"
-    />
-    <div class="texto-banner">
-      <h2>Publicidad</h2>
-    </div>
-  </section>
+  <div class="overlay">
+    <h2>Publicidad</h2>
+  </div>
+</section>
+
   
-  <!-- Buscador (opcional si implementas lógica) -->
+  <!-- Buscador -->
   <section class="buscador">
-    <input type="text" placeholder="Buscar un producto..." />
+    <input
+      type="text"
+      placeholder="Buscar un producto..."
+      [(ngModel)]="terminoBusqueda"
+      (input)="buscarProducto()" />
     <button><i class="pi pi-search"></i></button>
   </section>
   

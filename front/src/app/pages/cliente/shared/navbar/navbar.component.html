@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar"> 
   <div class="logo">
     <span style="color: fuchsia;">Arte</span><strong>mania</strong>
   </div>
@@ -11,12 +11,20 @@
   </ul>
 
   <div class="nav-actions">
+    <!-- Carrito -->
     <button class="btn-icon" routerLink="/carrito">
       <i class="pi pi-shopping-cart"></i>
       <span *ngIf="totalCarrito > 0" class="carrito-contador">{{ totalCarrito }}</span>
     </button>
 
-    <button class="btn-primary" routerLink="/login" *ngIf="!auth.isAuthenticated()">Administrador</button>
-    <button *ngIf="auth.isAuthenticated()" (click)="logout()">Cerrar sesión</button>
+    <!-- Usuario (login) -->
+    <button class="btn-icon" routerLink="/login" *ngIf="!auth.isAuthenticated()" title="Iniciar sesión">
+      <i class="pi pi-user"></i>
+    </button>
+
+    <!-- Logout -->
+    <button class="btn-icon" *ngIf="auth.isAuthenticated()" (click)="logout()" title="Cerrar sesión">
+      <i class="pi pi-sign-out"></i>
+    </button>
   </div>
 </nav>

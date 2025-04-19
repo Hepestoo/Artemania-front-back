@@ -3,14 +3,21 @@ import { adminAuthGuard } from './pages/admin/guards/admin-auth.guard';
 import { ClienteLayoutComponent } from './pages/cliente/cliente-layout.component';
 
 export const routes: Routes = [
-  //Redirección principal
+  // Redirección principal
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
   },
 
-  //Rutas cliente con layout fijo
+  // Ruta login (fuera del layout del cliente)
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./pages/cliente/login/login.component').then(m => m.LoginComponent),
+  },
+
+  // Rutas cliente con layout fijo
   {
     path: '',
     component: ClienteLayoutComponent,
@@ -41,20 +48,14 @@ export const routes: Routes = [
           import('./pages/cliente/carrito/carrito.component').then(m => m.CarritoComponent),
       },
       {
-        path: 'login',
-        loadComponent: () =>
-          import('./pages/cliente/login/login.component').then(m => m.LoginComponent),
-      },
-      {
         path: 'checkout',
         loadComponent: () =>
           import('./pages/cliente/checkout/checkout.component').then(m => m.CheckoutComponent),
-      },
-      
+      }
     ]
   },
 
-  //Rutas admin
+  // Rutas admin
   {
     path: 'admin',
     children: [
@@ -91,3 +92,4 @@ export const routes: Routes = [
     ]
   }
 ];
+

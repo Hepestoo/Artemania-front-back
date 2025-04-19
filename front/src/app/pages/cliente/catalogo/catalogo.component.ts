@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { Producto, ProductoService } from '../../../services/producto.service';
 import { SubcategoriaService } from '../../../services/subcategorias.service';
 import { CarritoService } from '../../../services/carrito.service';
@@ -15,7 +17,7 @@ import { CarritoService } from '../../../services/carrito.service';
 export class CatalogoComponent implements OnInit {
   subcategorias: any[] = [];
   productos: Producto[] = [];
-  productosOriginal: Producto[] = []; // respaldo para filtros
+  productosOriginal: Producto[] = [];
   cantidades: { [id: number]: number } = {};
   subcategoriaSeleccionada: number | null = null;
 
@@ -27,15 +29,26 @@ export class CatalogoComponent implements OnInit {
   constructor(
     private productoService: ProductoService,
     private subcategoriaService: SubcategoriaService,
-    private carritoService: CarritoService
+    private carritoService: CarritoService,
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+    // 1. Cargar subcategorías
     this.subcategoriaService.listar().subscribe((res) => {
       this.subcategorias = res;
-      if (res.length > 0) {
-        this.seleccionarSubcategoria(res[0].id);
-      }
+
+      // 2. Verificar si hay query param "sub" y cargar productos
+      this.route.queryParams.subscribe(params => {
+        const subId = parseInt(params['sub'], 10);
+
+        if (subId && this.subcategorias.some(sc => sc.id === subId)) {
+          this.seleccionarSubcategoria(subId);
+        } else if (this.subcategorias.length > 0) {
+          this.seleccionarSubcategoria(this.subcategorias[0].id);
+        }
+      });
     });
 
     this.generarSessionIdSiNoExiste();
@@ -55,8 +68,15 @@ export class CatalogoComponent implements OnInit {
 
     this.productoService.obtenerPorSubcategoria(id).subscribe((res) => {
       this.productosOriginal = res;
-      this.productos = [...res]; // copia
+      this.productos = [...res];
       this.generarPaginas();
+
+      // Actualizar URL con query param
+      this.router.navigate([], {
+        relativeTo: this.route,
+        queryParams: { sub: id },
+        queryParamsHandling: 'merge'
+      });
     });
   }
 
@@ -118,4 +138,21 @@ export class CatalogoComponent implements OnInit {
     this.paginaActual = 1;
     this.generarPaginas();
   }
+
+  terminoBusqueda: string = '';
+
+buscarProducto() {
+  const termino = this.terminoBusqueda.trim().toLowerCase();
+
+  if (termino === '') {
+    this.productos = [...this.productosOriginal];
+  } else {
+    this.productos = this.productosOriginal.filter(producto =>
+      producto.nombre.toLowerCase().includes(termino)
+    );
+  }
+
+  this.paginaActual = 1;
+  this.generarPaginas();
+}
 }
